@@ -1,17 +1,23 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-public class MainClassTest
+public class MainClassTest {
+    MainClass getClassStringForTest = new MainClass();
 
-{
-    MainClass getClassNumberForTest = new MainClass();
     @Test
-    public void testGetClassNumber()
-    {
-            int actual = getClassNumberForTest.getClassNumber();
-            int expected = 45;
-       Assert.assertTrue("Номер класса < 45, проверка не пройдена", expected < actual);
+    public void testGetClassString() {
+        String actual = getClassStringForTest.getClassString();
+
+
+        if (actual.contains("hello")) {
+            Assert.assertTrue("В подстроке нет слова hello", actual.contains("hello"));
+
+        }
+        if (actual.contains("Hello")) {
+            Assert.assertTrue("В подстроке нет слова Hello", actual.contains("Hello"));
+
+        } else Assert.fail("нет Hello или hello в переданном сообщении");
+
 
     }
-
 }
